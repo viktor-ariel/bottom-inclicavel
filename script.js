@@ -78,3 +78,30 @@ document.getElementById('nao2').addEventListener('mouseover', function() {
     buttonNao.style.left = Math.floor(Math.random() * (maxX - minX + 1)) + minX + 'px';
     buttonNao.style.top = Math.floor(Math.random() * (maxY - minY + 1)) + minY + 'px';
 });
+
+
+function loop() {
+            // Definindo o número máximo de vezes para o loop
+            var maxLoops = 5;
+
+            // Variável para controlar o número de loops
+            var loopCount = 0;
+
+            // Função que será executada repetidamente
+            function executarLoop() {
+                // Verifica se o limite de loops foi atingido
+                if (loopCount < maxLoops) {
+                    // Incrementa o contador de loops
+                    loopCount++;
+
+                    // Redireciona para a página index.html
+                    window.location.href = "index.html";
+                } else {
+                    // Limpa o intervalo de repetição
+                    clearInterval(intervalID);
+                }
+            }
+
+            // Chama a função executarLoop repetidamente a cada 1000ms (1 segundo)
+            var intervalID = setInterval(executarLoop, 1000);
+}
